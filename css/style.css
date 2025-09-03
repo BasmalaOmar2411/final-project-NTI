@@ -84,6 +84,35 @@
 .h-50{
     height: 325px;
 }
+.owl-carousel .item{
+ border-radius: 10px;
+}
+.card{
+   padding: 20px;
+    height: 360px;
+}
+ .owl-item{
+    margin-right: 0 !important;
+ }
+.owl-nav{
+    text-align: center;
+    
+}
+.owl-prev{
+    margin-right: 20px;
+    
+}
+.ho{
+    border:1px solid #a3371c;
+}
+.ho:hover{
+    background-color: #deb9af;
+    border: none;
+    transform: translateY(-10px);
+}
+.tr:hover{
+    transform: translateY(-10px);
+}
 ul {list-style-type: none;}
 a {text-decoration: none; color: black;}
 @media (min-width: 576px) { }

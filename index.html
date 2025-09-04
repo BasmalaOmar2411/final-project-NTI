@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- //// black bar-->
-    <div class="ts-store-notice  bg-dark" style="background-image:url(./images/store-notice-bg-1.png)" >
+    <div class="ts-store-notice  bg-dark" style="background-image:url(./images/store-notice-bg-1.png)" id="storeNotice" >
 		<div class="container-fluid">
             <div class="d-flex justify-content-center col-8 mx-3" style="color: white;">
 			<p>Super discount for your <strong>first purchase</strong> </p>		
@@ -25,12 +25,12 @@
 			</div>
 		    </div>
 		    <p><small>Use discount code in the checkout!</small></p>	
-         	<span class="close"><a href="#" class="decore"><i class="fa-solid fa-x"></i></a></span>
+         	<span class="close"><a href="#" class="decore" id="closeNotice"><i class="fa-solid fa-x"></i></a></span>
 		</div>
         </div>
 	</div>
         <!-- ////top bar -->
-    <nav class="navbar navbar-expand-lg border-bottom" style="height: 36px; font-size: 0.9rem;" >
+    <nav class="navbar navbar-expand-lg border-bottom " style="height: 36px; font-size: 0.9rem;" >
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
             <ul class="navbar-nav">
@@ -100,9 +100,11 @@
     <nav class="navbar nav-sticky bg-body-tertiary py-3">
     <div class="container">
         <a class="navbar-brand" href="#"><img src="./images/logo-furniture-300x95.png" alt="" style="width: 100px; height: 32px;"></a>
-
-        <form class="d-flex" role="search">
-        <select name="term" class="select-category "><option value="">All Categories</option>
+<!-- <div class="search-container d-flex"> -->
+        <form class="d-flex " role="search">  
+            <div>
+        <select name="term" class="select-category ">
+        <option value="">All Categories</option>
         <option value="autopart" >Autopart</option>
         <option value="accessories-automotive" >&nbsp;&nbsp;&nbsp;Accessories</option>
         <option value="car-care" >&nbsp;&nbsp;&nbsp;Car Care</option>
@@ -127,8 +129,20 @@
         <option value="skincare" >&nbsp;&nbsp;&nbsp;Skincare</option>
         <option value="toner" >&nbsp;&nbsp;&nbsp;Toner</option>
         <option value="electronic" >Electronic</option>
-        <input class="form px-5 border-start w-80" type="search" placeholder="Search for Products" aria-label="Search"/>
-        <button class="btn " type="submit" style="background-color: #a3371c;"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></button>
+        </div>
+        <div>
+        <input class="form px-5 border-start w-80" type="search" placeholder="Search for Products" aria-label="Search" id="searchInput"/>
+        </div>
+        <div>
+        <button class="btn " type="submit" style="background-color: #a3371c;" id="searchInput"><i class="fa-solid fa-magnifying-glass" style="color: white;"></i></button>
+            </div>
+        <div class="popular-search">
+            <span class="popular-search-item">Laptop</span>
+            <span class="popular-search-item">Furniture</span>
+            <span class="popular-search-item">Chair</span>
+            <span class="popular-search-item">Sofa</span>
+            </div>
+            </div>
         </form>
         <ul class="d-flex  dec mt-2">
             <li class="nav-item me-3">
@@ -156,9 +170,12 @@
                 <a class="btn dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="wpml-ls-native hov">Home</span></a>
                 <ul class="dropdown-menu ">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <div class="d-flex justify-content-around" style="width: 1000px;">
+                        <div class="col-5 card eff"><li><a class="dropdown-item " href="#"><img src="./images/mega-home-1.jpg"alt="" class="img-fluid"><h5 class="text-center">SuperMarket-01</h5></a></li></div>
+                        <div class="col-5 card eff"><li><a class="dropdown-item " href="#"><img src="./images/mega-home-1.jpg"alt="" class="img-fluid"><h5 class="text-center">SuperMarket-01</h5></a></li></div>
+                        <div class="col-5 card eff"><li><a class="dropdown-item " href="#"><img src="./images/mega-home-1.jpg"alt="" class="img-fluid"><h5 class="text-center">SuperMarket-01</h5></a></li></div>
+                        <div class="col-5 card eff"><li><a class="dropdown-item " href="#"><img src="./images/mega-home-1.jpg"alt="" class="img-fluid"><h5 class="text-center">SuperMarket-01</h5></a></li></div>
+              </div>
                 </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -292,8 +309,8 @@
                     <div class="relative">
                     <img src="./images/furniture-6.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-33%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px; width:auto;" ><p>-33%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">14-inch Fasion Simplicity Quality Wall Clock, Home Decor</a>
                     <h6>$50<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$75</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -304,8 +321,8 @@
                     <div class="relative">
                     <img src="./images/furniture-3-700x700.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-20%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px;" ><p>-20%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">Studio Designs Home, Heather Studio Designs Chair</a>
                     <h6>$192<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$239</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -316,8 +333,8 @@
                     <div class="relative">
                     <img src="./images/furniture-5-300x300.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-48%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px;" ><p>-48%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">Mid Century Modern Round Dining Table in Oak</a>
                     <h6>$569<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$1099</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -328,8 +345,8 @@
                     <div class="relative">
                     <img src="./images/furniture-15.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: gray; color: white;" ><p>SOLD OUT</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: gray; color: white; height: 25px;" ><p>SOLD OUT</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">High seating comfort with built in armrest</a>
                     <h6>$1,465<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$1,536</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -340,8 +357,8 @@
                     <div class="relative">
                     <img src="./images/furniture-29-300x300.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-26%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px;" ><p>-26%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">Slate Table Lamp with Natural Slate Finish</a>
                     <h6>$138<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$188</span></h6>
                     <div><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -352,8 +369,8 @@
                     <div class="relative">
                     <img src="./images/furniture-6.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-33%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px;" ><p>-33%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">14-inch Fasion Simplicity Quality Wall Clock, Home Decor</a>
                     <h6>$50<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$75</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -364,8 +381,8 @@
                     <div class="relative">
                     <img src="./images/furniture-3-700x700.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-20%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px;" ><p>-20%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">Studio Designs Home, Heather Studio Designs Chair</a>
                     <h6>$192<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$239</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -376,8 +393,8 @@
                     <div class="relative">
                     <img src="./images/furniture-5-300x300.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: #a3371c; color: white;" ><p>-48%</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: #a3371c; color: white; height: 25px;" ><p>-48%</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">Mid Century Modern Round Dining Table in Oak</a>
                     <h6>$569<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$1099</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -388,8 +405,8 @@
                     <div class="relative">
                     <img src="./images/furniture-15.jpg"alt="">
                     </div>
-                    <div class="absolute" style="background-color: gray; color: white;" ><p>SOLD OUT</p></div>
-                    <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div>
+                    <div class="position-absolute top-2 start-2 rounded" style="background-color: gray; color: white; height: 25px;" ><p>SOLD OUT</p></div>
+                    <!-- <div class="absolute"><i class="fa-regular fa-heart"></i> <i class="fa-regular fa-cart-shopping"></i></div> -->
                     <a href="#" class="hov">High seating comfort with built in armrest</a>
                     <h6>$1,465<span style="text-decoration: line-through;color: gray; margin-left: 5px;">$1,536</span></h6>
                     <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> </div>
@@ -455,78 +472,78 @@
     <div >
         <h3 class="text-center my-5">New Arrivals</h3>
     </div>
-    <div class=" d-flex">
-        <div class="card">
+    <div class=" d-flex ">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-7-100x100.jpg"alt="">
+            <img src="./images/furniture-7.jpg"alt="" class="img-fluid">
             </div>
-            <div class="absolute" style="background-color: #f05024; color: white;" ><p>Hot</p></div>
+            <div class="position-absolute top-2 start-2 rounded text-center" style="background-color: #f05024; color: white; width:35px; height: 25px;" ><p>Hot</p></div>
             <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-14-100x100.jpg"alt="">
+            <img src="./images/furniture-14.jpg"alt="" class="img-fluid">
             </div>
              <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-17-100x100.jpg"alt="">
+            <img src="./images/furniture-17.jpg"alt="" class="img-fluid">
             </div>
             <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-6-100x100.jpg"alt="">
+            <img src="./images/furniture-6.jpg"alt="" class="img-fluid">
             </div>
-            <div class="absolute" style="background-color: #f05024; color: white;" ><p>Hot</p></div>
+            <div class="position-absolute top-2 start-2 rounded" style="background-color: #7e2810; color: white; width:auto; height: 25px; " ><p >-33%</p></div>
             <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-16-100x100.jpg"alt="">
+            <img src="./images/furniture-16.jpg"alt="" class="img-fluid">
             </div>
              <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
     </div>
     <div class=" d-flex">
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-7-100x100.jpg"alt="">
+            <img src="./images/furniture-4.jpg"alt="" class="img-fluid">
             </div>
              <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-14-100x100.jpg"alt="">
+            <img src="./images/furniture-10.jpg"alt="" class="img-fluid">
             </div>
              <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-17-100x100.jpg"alt="">
+            <img src="./images/furniture-3.jpg"alt="" class="img-fluid">
             </div>
-            <div class="absolute" style="background-color: #f05024; color: white;" ><p>Hot</p></div>
+            <div class="position-absolute top-2 start-2 rounded" style="background-color: #852c14; color: white; width:auto; height: 25px;" ><p>-20%</p></div>
             <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-6-100x100.jpg"alt="">
+            <img src="./images/furniture-8.jpg"alt="" class="img-fluid">
             </div>
              <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
         </div>
-        <div class="card">
+        <div class="card col-6 col-lg">
             <div class="relative">
-            <img src="./images/furniture-16-100x100.jpg"alt="">
+            <img src="./images/furniture-15.jpg"alt="" class="img-fluid">
             </div>
              <a href="#" class="hov">Milo Brass And Black Metal Lamp Ø18cm x 30cm</a>
             <h6>$82</h6>
@@ -537,13 +554,17 @@
 </div>
 <!-- //////////// -->
 <div class="container my-5">
-    <div class="d-flex p-4 rounded" style="background-color: #d3f0db; height: 148px;">
-        <div class="col-5">
+    <div class="d-flex  px-5 pt-4 rounded" style="background-color: #d3f0db; ">
+        <div class="col-12 col-lg-5">
         <h2>Earn Cash Back For The Things You Buy Every Where</h2>
         <p>Application via Merto.<span style="text-decoration: underline;"> Terms & Conditions.</span></p>
         </div>
-        <button type="button" class="btn btn-success col-2 bt" style="height: 46px; margin-top: 40px;">View More</button>
-        <img class="col-5" src="./images/payments-2-1.png">
+        <div class="col-12 col-lg-auto mx-auto ">
+        <button type="button" class="btn btn-success  bt" style="height: 46px; margin-top: 40px;">View More</button>
+        </div>
+        <div class="col-12 col-lg-5">
+        <img  src="./images/payments-2-1.png" alt=""  class="img-fluid">
+        </div>
     </div>
 </div>
 <!-- /////////// -->
@@ -684,7 +705,7 @@
         <hr class="container pb-4">
         <div class="d-flex container justify-content-between">
             <div >
-            <p>Copyright &copy; Merto. All Rights Reserved</p>
+            <p style="color: gray;">Copyright &copy; Merto. All Rights Reserved</p>
             </div>
             <div >
                 <ul class="d-flex">
@@ -701,6 +722,8 @@
         </div>
     </footer>
 <!-- /////////////////// -->
+<button id="backToTop" class="btn position-fixed bottom-0 end-0 bg-dark px-2 rounded d-none text-white"> <i class="fa-solid fa-arrow-up"></i></button>
+ <!-- //////// -->
     <script src="./js/jquery.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
